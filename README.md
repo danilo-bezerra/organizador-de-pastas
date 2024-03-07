@@ -2,6 +2,14 @@
 
 Este projeto consiste em um organizador de pastas, que permite pegar todos os arquivos de um diretório selecionado e classificá-los em diferentes subpastas de acordo com seu tipo.
 
+![Organizador de pastas em funcionamento](https://i.postimg.cc/Nfwmgmvx/programa.png)
+
+### Antes
+![Diretório antes da organização](https://i.postimg.cc/BbC6Z82h/ntes.png)
+
+### Depois
+![Diretório após organização](https://i.postimg.cc/CxRFXrrr/depois.png)
+
 ## Uso
 
 1. Execute o script `app.py`.
