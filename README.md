@@ -5,10 +5,10 @@ Este projeto consiste em um organizador de pastas, que permite pegar todos os ar
 ![Organizador de pastas em funcionamento](https://i.postimg.cc/Nfwmgmvx/programa.png)
 
 ### Antes
-![Diretório antes da organização](https://i.postimg.cc/BbC6Z82h/ntes.png)
+
 
 ### Depois
-![Diretório após organização](https://i.postimg.cc/CxRFXrrr/depois.png)
+
 
 ## Uso
 
