@@ -2,7 +2,7 @@
 
 Este projeto consiste em um organizador de pastas, que permite pegar todos os arquivos de um diretório selecionado e classificá-los em diferentes subpastas de acordo com seu tipo.
 
-![Organizador de pastas em funcionamento](https://i.postimg.cc/Nfwmgmvx/programa.png)
+![Organizador de pastas em funcionamento]()
 
 ### Antes
 
