@@ -1,4 +1,4 @@
-import os
+import os, math, random, time
 
 class FolderOrganizer:
     def __init__(self, target_files, folder, log_function) -> None:
@@ -23,13 +23,14 @@ class FolderOrganizer:
             target["path"] = path
         return dirs
     
-    def create_folders(self, dir_list):
+    def create_folders(self, dir_list   ):
         for dir in dir_list:
             try:
                 os.mkdir(dir)
                 self.created_folders += 1
             except FileExistsError:
                 self.log_function(f"Erro: O diretório '{dir}' já existe!")
+
             except PermissionError:
                 self.log_function(f"Erro: Sem permissão para criar o diretório '{dir}'!")
             except OSError as e:
@@ -41,12 +42,20 @@ class FolderOrganizer:
 
             for target in self.target_files:
                 if extension in target["extensions"]:
-                    new_path = os.path.join(target["path"], file.name)
-                    self.log_function(f"'{file.name}' foi movido para '{new_path}'" )
+                    new_path = os.path.join(target["path"], file.name)               
+
+                    if (os.path.exists(new_path)):
+                        new_path =  os.path.join(target["path"], f'{self.generate_renamed_prefix()}{file.name}')
+
                     os.rename(file.path, new_path)
+                    
+                    self.log_function(f"'{file.name}' foi movido para '{new_path}'" )
                     self.moved_files += 1
 
                 self.files_count += 1
+        except WindowsError as e:
+            self.log_function(f"Erro windows: {e}")
+            print(file)
         except Exception as e:
             self.log_function(f"Erro: {e}")
             self.errors_count += 1
@@ -73,6 +82,10 @@ class FolderOrganizer:
             self.errors_count += 1
             
         self.log_final_status()
+
+    def generate_renamed_prefix(self):
+        current_timestamp = math.trunc(time.time())
+        return f'renamed_{current_timestamp * random.randint(2,9)}_'
             
     def log_final_status(self):
         self.log_function("= = = = = = = = = = = = = = = = = = = = = = = = = = =")  

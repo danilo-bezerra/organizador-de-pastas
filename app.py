@@ -57,11 +57,6 @@ class App:
             messagebox.showerror("Erro", f"Ocorreu um erro: {str(e)}")
 
 
-
-
-
-
-
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
